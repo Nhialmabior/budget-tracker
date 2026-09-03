@@ -9,37 +9,115 @@ body {
 /* ID selector */
 #page-header {
     text-align: center;
-    background-color: #00619c;
-    color: white;
-    padding: 25px;
+    background-color: #dbeafe;
+    padding: 20px;
     margin-bottom: 20px;
-}
-
-/* Element selector */
-h1 {
-    margin-bottom: 10px;
 }
 
 /* Class selector */
-.expense-section {
+.add-expense-section {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-/* ID selector */
-#expenses-list {
-    background-color: #fff3cd;
+/* Advanced selector 1: direct child selector */
+.add-expense-section > form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Advanced selector 2: descendant selector */
+.expenses-section td {
+    padding: 12px;
+}
+
+/* Expenses section */
+.expenses-section {
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-/* Element selector */
-input {
-    display: block;
-    width: 95%;
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Advanced selector 3: position pseudo-class */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Header row */
+thead tr:first-child {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Advanced selector 4: negation pseudo-class */
+input:not([type="submit"]),
+select {
     padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin: 8px 0 15px;
+}
+
+/* Advanced selector 5: focus pseudo-class */
+input:focus,
+select:focus {
+    outline: 2px solid #2563eb;
+    background-color: #eef5ff;
+}
+
+/* Table hover effect */
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+/* Button */
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Details section */
+details {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Multimedia section */
+.multimedia-section {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
 }
