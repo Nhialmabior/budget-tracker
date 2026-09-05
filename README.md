@@ -107,3 +107,54 @@ allowing users to add and manage expenses dynamically.
 
 The project will eventually become a fully functional budget and expense
 tracking application.
+
+## Week 4 - SpendWise Dashboard Shell
+
+The SpendWise project was redesigned as a modern responsive dashboard using
+CSS Grid and Flexbox.
+
+### Dashboard Components
+
+The dashboard contains:
+
+- Sidebar navigation
+- Dashboard header
+- Six financial category cards
+- Food
+- Transport
+- Rent
+- Entertainment
+- Savings
+- Utilities
+
+### CSS Grid
+
+CSS Grid is used for the overall dashboard layout and the category card grid.
+
+### Flexbox
+
+Flexbox is used to arrange:
+
+- Sidebar navigation
+- Header content
+- Card content
+- Navigation items
+
+### CSS Custom Properties
+
+The color theme is defined using CSS variables inside `:root`, including
+brand color, accent color, background color, surface color, and text colors.
+
+### Responsive Design
+
+A media query at 768px changes the dashboard to a single-column layout
+for smaller screens.
+
+### Micro-interactions
+
+Dashboard cards include hover and keyboard focus effects using transform
+and box-shadow transitions.
+
+### Dark Theme
+
+A dark theme is included using the `prefers-color-scheme: dark` media query.

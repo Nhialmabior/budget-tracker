@@ -1,205 +1,539 @@
-/* ==============================
-   SPENDWISE - WEEK 3 STYLING
-   ============================== */
+/* =========================================
+   SPENDWISE
+   WEEK 4 ASSIGNMENT
+   CSS GRID + FLEXBOX
+   ========================================= */
 
-/* Element selector */
-body {
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    padding: 30px;
-    background-color: #f4f7fb;
-    color: #243447;
-    line-height: 1.6;
+
+/* =========================================
+   CSS CUSTOM PROPERTIES
+   ========================================= */
+
+:root {
+
+    /* Brand color */
+    --brand-color: #123b5d;
+
+    /* Accent color */
+    --accent-color: #2878b5;
+
+    /* Background and surface */
+    --background-color: #f4f7fb;
+    --surface-color: #ffffff;
+
+    /* Text colors */
+    --primary-text-color: #243447;
+    --secondary-text-color: #667788;
+
+    /* Other theme variables */
+    --light-text-color: #ffffff;
+    --border-color: #d8e2ec;
+
+    /* Card shadow */
+    --card-shadow: 0 8px 20px rgba(18, 59, 93, 0.12);
 }
 
-/* Main headings */
-h1,
-h2 {
-    font-family: "Space Grotesk", sans-serif;
-    color: #123b5d;
-}
 
-h1 {
-    font-size: 36px;
-    margin: 10px 0;
-}
+/* =========================================
+   BASIC STYLES
+   ========================================= */
 
-h2 {
-    font-size: 24px;
-    margin-top: 0;
-}
-
-/* ==============================
-   HEADER CARD
-   ============================== */
-
-#page-header {
-    text-align: center;
-    background-color: #e5f2ff;
-    padding: 30px;
-    margin-bottom: 25px;
-    border: 1px solid #c5dff5;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(18, 59, 93, 0.08);
-}
-
-#page-header img {
-    border-radius: 50%;
-}
-
-#page-header p {
-    margin-bottom: 0;
-    color: #526779;
-}
-
-/* ==============================
-   ADD EXPENSE CARD
-   ============================== */
-
-.add-expense-section {
-    background-color: #ffffff;
-    padding: 25px;
-    margin-bottom: 25px;
-    border: 1px solid #d8e2ec;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(18, 59, 93, 0.06);
-}
-
-/* Direct child selector */
-.add-expense-section > form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Form labels */
-label {
-    font-weight: 600;
-    margin-top: 8px;
-    color: #34495e;
-}
-
-/* Input and select styling */
-input,
-select {
-    font-family: "DM Sans", sans-serif;
-    font-size: 16px;
-    padding: 12px;
-    margin: 7px 0 15px;
-    border: 1px solid #b9c9d8;
-    border-radius: 8px;
+* {
     box-sizing: border-box;
 }
 
-/* Focus effect */
-input:focus,
-select:focus {
-    outline: none;
-    border-color: #2878b5;
-    box-shadow: 0 0 0 3px rgba(40, 120, 181, 0.15);
-}
 
-/* ==============================
-   BUTTON
-   ============================== */
+body {
 
-button {
+    margin: 0;
+
     font-family: "DM Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 20px;
-    margin-top: 5px;
-    background-color: #2878b5;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    background-color: var(--background-color);
+
+    color: var(--primary-text-color);
 }
 
-button:hover {
-    background-color: #1f608f;
-    transform: translateY(-1px);
+
+/* =========================================
+   DASHBOARD
+   CSS GRID
+   ========================================= */
+
+.dashboard {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
 }
 
-/* ==============================
-   EXPENSE TABLE CARD
-   ============================== */
 
-.expenses-section {
-    background-color: #ffffff;
+/* =========================================
+   SIDEBAR
+   FLEXBOX
+   ========================================= */
+
+.sidebar {
+
+    background-color: var(--brand-color);
+
+    color: var(--light-text-color);
+
     padding: 25px;
-    margin-bottom: 25px;
-    border: 1px solid #d8e2ec;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(18, 59, 93, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
 }
 
-/* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    overflow: hidden;
+
+/* =========================================
+   SIDEBAR LOGO
+   FLEXBOX
+   ========================================= */
+
+.sidebar-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 40px;
+}
+
+
+.sidebar-logo img {
+
     border-radius: 10px;
 }
 
-/* Table cells */
-th,
-td {
-    border: 1px solid #d8e2ec;
-    padding: 14px;
-    text-align: left;
+
+.sidebar-logo h2 {
+
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
 }
 
-/* Table header */
-thead tr:first-child {
-    background-color: #123b5d;
-    color: white;
+
+/* =========================================
+   NAVIGATION
+   FLEXBOX
+   ========================================= */
+
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
 }
 
-/* Alternating rows */
-tbody tr:nth-child(even) {
-    background-color: #f3f7fa;
-}
 
-/* Hover effect */
-tbody tr:hover {
-    background-color: #e3f1fb;
+.nav-item {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 12px;
+
+    color: var(--light-text-color);
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
     transition: background-color 0.2s ease;
 }
 
-/* ==============================
-   DETAILS CARD
-   ============================== */
 
-details {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 25px;
-    border: 1px solid #d8e2ec;
-    border-radius: 12px;
+.nav-item:hover,
+.nav-item.active {
+
+    background-color: var(--accent-color);
 }
 
-summary {
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.main-content {
+
+    padding: 35px;
+}
+
+
+/* =========================================
+   HEADER
+   FLEXBOX
+   ========================================= */
+
+.dashboard-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background-color: var(--surface-color);
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+}
+
+
+/* Header heading */
+
+.dashboard-header h1 {
+
+    margin: 0 0 5px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    color: var(--brand-color);
+}
+
+
+/* Header paragraph */
+
+.dashboard-header p {
+
+    margin: 0;
+
+    color: var(--secondary-text-color);
+}
+
+
+/* =========================================
+   USER INFORMATION
+   FLEXBOX
+   ========================================= */
+
+.user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: right;
+}
+
+
+.user-info span {
+
+    color: var(--secondary-text-color);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SECTION HEADING
+   ========================================= */
+
+.section-heading {
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    color: var(--brand-color);
+}
+
+
+.section-heading p {
+
+    margin: 5px 0 0;
+
+    color: var(--secondary-text-color);
+}
+
+
+/* =========================================
+   CATEGORY CARD GRID
+   CSS GRID
+   ========================================= */
+
+.card-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   CATEGORY CARDS
+   FLEXBOX
+   ========================================= */
+
+.category-card {
+
+    background-color: var(--surface-color);
+
+    min-height: 150px;
+
+    padding: 22px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================
+   HOVER MICRO-INTERACTION
+   ========================================= */
+
+.category-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--card-shadow);
+}
+
+
+/* =========================================
+   KEYBOARD FOCUS MICRO-INTERACTION
+   ========================================= */
+
+.category-card:focus {
+
+    outline: 2px solid var(--accent-color);
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--card-shadow);
+}
+
+
+/* =========================================
+   CARD CONTENT
+   FLEXBOX
+   ========================================= */
+
+.card-top {
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.card-label {
+
     font-weight: 600;
-    cursor: pointer;
-    color: #123b5d;
+
+    color: var(--secondary-text-color);
 }
 
-/* ==============================
-   MULTIMEDIA CARD
-   ============================== */
+
+.card-bottom h3 {
+
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 28px;
+
+    color: var(--brand-color);
+}
+
+
+.card-bottom p {
+
+    margin: 3px 0 0;
+
+    color: var(--secondary-text-color);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PREVIOUS WEEK MULTIMEDIA
+   ========================================= */
 
 .multimedia-section {
-    background-color: #ffffff;
+
+    margin-top: 30px;
+
     padding: 25px;
-    margin-bottom: 25px;
-    text-align: center;
-    border: 1px solid #d8e2ec;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(18, 59, 93, 0.06);
+
+    text-align: center;
 }
 
-iframe {
+
+.multimedia-section h2 {
+
+    margin-top: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    color: var(--brand-color);
+}
+
+
+.multimedia-section p {
+
+    color: var(--secondary-text-color);
+}
+
+
+.multimedia-section iframe {
+
     max-width: 100%;
+
     border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   BELOW 768px
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Single-column dashboard */
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Sidebar */
+
+    .sidebar {
+
+        padding: 15px;
+    }
+
+
+    .sidebar-logo {
+
+        margin-bottom: 15px;
+    }
+
+
+    /* Horizontal navigation */
+
+    .navigation {
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .nav-item {
+
+        flex: 1;
+
+        justify-content: center;
+    }
+
+
+    /* Main content */
+
+    .main-content {
+
+        padding: 20px;
+    }
+
+
+    /* Header becomes vertical */
+
+    .dashboard-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .user-info {
+
+        text-align: left;
+    }
+
+
+    /* Cards become one column */
+
+    .card-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   DARK THEME
+   STRETCH GOAL
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        --brand-color: #8ec5e8;
+
+        --accent-color: #4d9ed0;
+
+        --background-color: #101820;
+
+        --surface-color: #1e2933;
+
+        --primary-text-color: #f1f5f9;
+
+        --secondary-text-color: #b5c1cc;
+
+        --light-text-color: #ffffff;
+
+        --border-color: #344454;
+
+        --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
 }

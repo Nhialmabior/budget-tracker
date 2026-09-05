@@ -1,139 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SpendWise - Budget Tracker</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
+
 
 <body>
 
-    <header id="page-header">
-        <img
-            src="Assets/Logo.jpg"
-            alt="SpendWise logo"
-            width="80"
-        >
+    <!-- =====================================
+         MAIN DASHBOARD
+         ===================================== -->
 
-        <h1>SpendWise</h1>
-        <p>Track your income and expenses in one place.</p>
-    </header>
+    <div class="dashboard">
 
-    <!-- Add Expense Section -->
-    <section class="add-expense-section">
-        <h2>Add Expense</h2>
 
-        <form>
-            <label for="expense-name">Expense Name</label>
-            <input
-                type="text"
-                id="expense-name"
-                placeholder="Enter expense name"
+        <!-- =====================================
+             SIDEBAR / NAVIGATION
+             ===================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <!-- Existing Week 2 logo -->
+                <img
+                    src="Assets/Logo.jpg"
+                    alt="SpendWise logo"
+                    width="50"
+                >
+
+                <h2>SpendWise</h2>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a
+                    href="#dashboard"
+                    class="nav-item active"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="#expenses"
+                    class="nav-item"
+                >
+                    Expenses
+                </a>
+
+                <a
+                    href="#reports"
+                    class="nav-item"
+                >
+                    Reports
+                </a>
+
+                <a
+                    href="#settings"
+                    class="nav-item"
+                >
+                    Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+             ===================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =====================================
+                 HEADER
+                 ===================================== -->
+
+            <header
+                class="dashboard-header"
+                id="dashboard"
             >
 
-            <label for="expense-amount">Amount</label>
-            <input
-                type="number"
-                id="expense-amount"
-                placeholder="Enter amount"
-            >
+                <div class="header-content">
 
-            <label for="expense-category">Category</label>
-            <select id="expense-category">
-                <option value="">Select a category</option>
-                <option value="food">Food</option>
-                <option value="transport">Transport</option>
-                <option value="rent">Rent</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="other">Other</option>
-            </select>
+                    <h1>Dashboard</h1>
 
-            <button type="button">Add Expense</button>
-        </form>
-    </section>
+                    <p>
+                        Track and manage your finances with SpendWise.
+                    </p>
 
-    <!-- Expenses Section -->
-    <section class="expenses-section">
-        <h2>Your Expenses</h2>
+                </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Amount</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                <tr>
-                    <td>Lunch</td>
-                    <td>$10</td>
-                    <td>Food</td>
-                    <td>2026-09-01</td>
-                </tr>
+                <div class="user-info">
 
-                <tr>
-                    <td>Bus Fare</td>
-                    <td>$5</td>
-                    <td>Transport</td>
-                    <td>2026-09-01</td>
-                </tr>
+                    <span>Welcome back!</span>
 
-                <tr>
-                    <td>Internet</td>
-                    <td>$25</td>
-                    <td>Other</td>
-                    <td>2026-09-02</td>
-                </tr>
+                    <strong>SpendWise User</strong>
 
-                <tr>
-                    <td>Movie</td>
-                    <td>$15</td>
-                    <td>Entertainment</td>
-                    <td>2026-09-02</td>
-                </tr>
+                </div>
 
-                <tr>
-                    <td>Rent</td>
-                    <td>$200</td>
-                    <td>Rent</td>
-                    <td>2026-09-03</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+            </header>
 
-    <!-- Interactive Details Section -->
-    <details>
-        <summary>How to use this tracker</summary>
-        <p>
-            Enter the name and amount of your expense, select a category,
-            and click the Add Expense button. Expense functionality will
-            be added with JavaScript in a later week.
-        </p>
-    </details>
 
-    <!-- Multimedia Section -->
-    <section class="multimedia-section">
-        <h2>Budgeting Tips</h2>
+            <!-- =====================================
+                 MONTHLY OVERVIEW
+                 ===================================== -->
 
-        <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/HQzoZfc3GwQ"
-            title="Budgeting tips video"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
-    </section>
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>Monthly Overview</h2>
+
+                    <p>
+                        Your financial activity this month
+                    </p>
+
+                </div>
+
+
+                <!-- =====================================
+                     CATEGORY CARDS
+                     ===================================== -->
+
+                <div class="card-grid">
+
+
+                    <!-- Food -->
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-label">
+                                Food
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-bottom">
+
+                            <h3>$120</h3>
+
+                            <p>This month</p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Transport -->
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-label">
+                                Transport
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-bottom">
+
+                            <h3>$85</h3>
+
+                            <p>This month</p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Rent -->
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-label">
+                                Rent
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-bottom">
+
+                            <h3>$300</h3>
+
+                            <p>This month</p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Entertainment -->
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-label">
+                                Entertainment
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-bottom">
+
+                            <h3>$60</h3>
+
+                            <p>This month</p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Savings -->
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-label">
+                                Savings
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-bottom">
+
+                            <h3>$200</h3>
+
+                            <p>This month</p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Utilities -->
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-label">
+                                Utilities
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-bottom">
+
+                            <h3>$75</h3>
+
+                            <p>This month</p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 PREVIOUS WEEK MULTIMEDIA
+                 ===================================== -->
+
+            <section class="multimedia-section">
+
+                <h2>Budgeting Tips</h2>
+
+                <p>
+                    Learn useful tips for managing your personal budget.
+                </p>
+
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/HQzoZfc3GwQ"
+                    title="Budgeting tips video"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
 
 </body>
+
 </html>
