@@ -4,7 +4,7 @@ SpendWise is a responsive, browser-based personal finance tracker. Its interface
 
 ## Live Website
 
-**Netlify:** https://spendwisebudgettracker.netlify.app/
+**Netlify:** https://spendwisehq.netlify.app
 
 **GitHub repository:** https://github.com/Nhialmabior/budget-tracker
 
