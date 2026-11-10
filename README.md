@@ -1,6 +1,6 @@
 # SpendWise — Personal Budget Tracker
 
-SpendWise is a responsive, browser-based personal finance dashboard for recording income and expenses, monitoring monthly budgets, and understanding spending habits.
+SpendWise is a responsive, browser-based personal finance tracker. Its interface is organized into separate pages so each navigation item opens a focused workspace.
 
 ## Live Website
 
@@ -8,26 +8,34 @@ SpendWise is a responsive, browser-based personal finance dashboard for recordin
 
 **GitHub repository:** https://github.com/Nhialmabior/budget-tracker
 
+## Pages
+
+- **Overview** (`index.html`): monthly income, expenses, balance, budget progress and recent transactions.
+- **Transactions** (`transactions.html`): add, edit, delete, search, filter and export income and expense records.
+- **Budget** (`budget.html`): set a monthly spending limit and monitor the remaining amount.
+- **Reports** (`reports.html`): review totals, spending by category, daily expense activity and CSV export.
+- **Settings** (`settings.html`): choose the display currency, switch themes and clear local application data.
+
 ## Features
 
-- Responsive layout for desktop, tablet, and mobile screens.
-- Record income and expenses with descriptions, dates, categories, and optional notes.
+- Separate pages with direct navigation links.
+- Responsive layout for desktop, tablet and mobile.
+- Shared transaction and preference data across all pages.
+- Income and expense categories, dates, descriptions and optional notes.
 - Edit and delete transactions.
-- Monthly income, expense, and net-balance summaries.
-- Set a monthly spending limit and monitor budget progress.
-- Spending totals grouped by category.
-- Daily expense chart for the selected month.
-- Navigate between months.
-- Search transactions and filter by income or expense.
-- Export transactions for the selected month to CSV.
-- Choose a display currency (USD, KES, SSP, EUR, or GBP).
-- Light and dark display themes.
-- Saves transactions and preferences in the browser using localStorage.
+- Monthly income, expense and net-balance summaries.
+- Monthly spending limit and progress indicator.
+- Category breakdown and daily expense chart.
+- Search and filter transactions.
+- CSV export.
+- USD, KES, SSP, EUR and GBP display formats.
+- Light and dark themes.
+- Browser localStorage persistence.
 
-## Technologies Used
+## Technologies
 
 - HTML5
-- CSS3, CSS Grid, and Flexbox
+- CSS3, CSS Grid and Flexbox
 - Vanilla JavaScript (ES6+)
 - Browser localStorage
 - Git and GitHub
@@ -36,61 +44,52 @@ SpendWise is a responsive, browser-based personal finance dashboard for recordin
 
 ## Project Structure
 
-\`\`\`text
+```text
 budget-tracker/
 ├── Assets/
 │   └── Logo.jpg
 ├── index.html
+├── transactions.html
+├── budget.html
+├── reports.html
+├── settings.html
 ├── styles.css
 ├── script.js
+├── js/
+│   ├── app.js
+│   ├── dashboard.js
+│   ├── transactions.js
+│   ├── budget.js
+│   ├── reports.js
+│   └── settings.js
 └── README.md
-\`\`\`
+```
 
-## Getting Started Locally
+## Run Locally
 
 1. Clone the repository:
-   \`git clone https://github.com/Nhialmabior/budget-tracker.git\`
+   `git clone https://github.com/Nhialmabior/budget-tracker.git`
 2. Open the project folder.
-3. Open \`index.html\` in a modern browser, or use the VS Code Live Server extension.
-4. Add transactions and set a monthly budget from the dashboard.
+3. Open `index.html` in a modern browser, or use the VS Code Live Server extension.
+4. Navigate between the pages using the sidebar.
 
 No build command or package installation is required.
 
 ## Data and Privacy Notes
 
-SpendWise currently stores its data in the browser's localStorage. Data is specific to the browser and device being used; it does not synchronize between devices or browsers and may be lost if the browser's site data is cleared. The currency selector changes the display format only; it does not convert exchange rates. This version does not use a remote database or user accounts.
+SpendWise stores its transactions and preferences in the browser's localStorage. All five pages use the same storage key, so changes made on one page are reflected on the others in that browser. Data does not synchronize between browsers or devices and may be lost if browser site data is cleared. The currency selector changes the display format only; it does not perform exchange-rate conversion. This learning project does not use a remote database or user accounts.
 
-## GitHub Repository Information
+## Deployment
 
-- **Repository:** [Nhialmabior/budget-tracker](https://github.com/Nhialmabior/budget-tracker)
-- **Default branch:** \`main\`
-- **Visibility:** Public
+The repository is connected to Netlify for continuous deployment from the `main` branch. The site is a static HTML, CSS and JavaScript application, so the publish directory is the repository root and no build command is needed. New commits to the connected branch trigger a Netlify deployment.
 
-## Deployment Process Summary
+## Challenges and Lessons
 
-1. Organized the application into HTML, CSS, JavaScript, and asset files.
-2. Pushed the source code to the public GitHub repository.
-3. Connected the repository to Netlify.
-4. Configured Netlify to publish the repository root as a static website, with no build command.
-5. Set the custom Netlify site address.
-6. Enabled continuous deployment from the GitHub \`main\` branch.
-7. Committed application improvements to GitHub; Netlify detects new commits and creates deployments automatically.
-
-## Challenges Encountered During Deployment
-
-- Making sure the logo, stylesheet, and JavaScript paths work after publishing.
-- Configuring the GitHub-to-Netlify connection and publish directory.
-- Ensuring the layout adapts to different viewport sizes.
-- Implementing browser-side data storage and validating user-entered amounts and dates.
-
-## Lessons Learned
-
-- Git and GitHub provide a reliable way to track and publish source-code changes.
-- Netlify can automatically redeploy a static website when new commits reach the connected branch.
-- Relative asset paths help static sites work across hosting environments.
-- Responsive CSS requires testing at several screen widths, not only on a desktop.
-- JavaScript can make a static dashboard interactive, while localStorage can preserve data in one browser.
-- A successful deployment still needs functional, accessibility, and device testing.
+- Separating the interface into pages while keeping one shared data source.
+- Maintaining consistent navigation, styles and responsive behavior across pages.
+- Making sure relative asset and script paths work on every page.
+- Using localStorage to preserve data across page navigation.
+- Testing a static site at multiple viewport sizes and checking that each page's controls work.
 
 ## Author
 
@@ -98,4 +97,4 @@ SpendWise currently stores its data in the browser's localStorage. Data is speci
 
 ---
 
-This is a learning project and a client-side prototype. It is not a substitute for a secure financial application with authenticated accounts and server-side data storage.
+This is a learning project and client-side prototype, not a secure financial application.
