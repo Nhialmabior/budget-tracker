@@ -83,6 +83,8 @@ SpendWise stores its transactions and preferences in the browser's localStorage.
 
 The repository is connected to Netlify for continuous deployment from the `main` branch. The site is a static HTML, CSS and JavaScript application, so the publish directory is the repository root and no build command is needed. New commits to the connected branch trigger a Netlify deployment.
 
+**Continuous-deployment test:** This README was updated and pushed to the `main` branch as a small change to test the GitHub-to-Netlify deployment workflow. The commit should trigger an automatic Netlify redeployment. Check the published site at [spendwisehq.netlify.app](https://spendwisehq.netlify.app/) after the deployment completes.
+
 ## Challenges and Lessons
 
 - Separating the interface into pages while keeping one shared data source.
