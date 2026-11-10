@@ -145,3 +145,234 @@
   color:#fff;
   box-shadow:0 2px 8px rgba(40,120,181,.18);
 }
+
+
+/* =========================================================
+   SpendWise UI refinement — responsive layout system
+   ========================================================= */
+:root{
+  --content-gutter:clamp(16px,3.2vw,48px);
+  --surface-raised:var(--surface);
+  --focus-ring:0 0 0 4px color-mix(in srgb,var(--blue) 18%,transparent);
+}
+html{scroll-padding-top:24px}
+body{
+  min-width:320px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.app-shell{grid-template-columns:252px minmax(0,1fr)}
+.sidebar{
+  z-index:20;
+  box-shadow:4px 0 24px rgba(18,59,93,.025);
+}
+.brand{letter-spacing:-.45px}
+.nav-link{
+  min-height:44px;
+  border:1px solid transparent;
+}
+.nav-link.active{
+  border-color:color-mix(in srgb,var(--blue) 13%,transparent);
+}
+.main-content{
+  width:min(1500px,100%);
+  padding:clamp(24px,3.2vw,48px) var(--content-gutter) 28px;
+}
+.topbar{align-items:center}
+.topbar h1{line-height:1.15}
+.topbar-actions{flex-shrink:0}
+.summary-grid{gap:clamp(10px,1.2vw,17px)}
+.summary-card,.panel{
+  box-shadow:0 5px 22px rgba(22,54,79,.045);
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.summary-card:hover,.panel:hover{
+  border-color:color-mix(in srgb,var(--blue) 18%,var(--border));
+}
+.summary-card{padding:clamp(16px,1.6vw,23px)}
+.panel{padding:clamp(17px,1.8vw,25px)}
+.panel-heading{flex-wrap:wrap}
+.button{min-height:40px}
+.icon-button{min-width:40px;min-height:40px}
+input,select,textarea{max-width:100%}
+.inline-form input,.transaction-tools input,.transaction-tools select,
+.settings-panel select{min-height:42px}
+.transaction-row{min-height:58px}
+.transaction-description strong{font-size:12px}
+.transaction-description span{font-size:11px}
+.transaction-amount{font-size:12px}
+.chart-column small{font-size:9px}
+.progress-track,.mini-track{background:color-mix(in srgb,var(--muted) 12%,var(--bg))}
+.modal-card{max-height:min(90dvh,780px);overflow-y:auto}
+.toast{width:max-content;max-width:calc(100vw - 32px);text-align:center}
+:where(a,button,input,select,textarea):focus-visible{
+  outline:3px solid color-mix(in srgb,var(--blue) 55%,transparent);
+  outline-offset:3px;
+  box-shadow:var(--focus-ring);
+}
+
+/* Wide laptops and desktop monitors */
+@media(min-width:1500px){
+  .app-shell{grid-template-columns:270px minmax(0,1fr)}
+  .sidebar{padding-inline:22px}
+  .main-content{padding-inline:clamp(44px,4vw,72px)}
+  .summary-grid{gap:20px}
+  .content-grid{gap:20px}
+}
+
+/* Tablet and compact laptop */
+@media(max-width:1050px){
+  .app-shell{grid-template-columns:210px minmax(0,1fr)}
+  .sidebar{padding:24px 13px 18px}
+  .brand{font-size:20px;margin-left:3px}
+  .main-content{padding:28px 22px 22px}
+  .summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .content-grid,.lower-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panel{min-width:0}
+  .chart-wrap{height:160px}
+}
+
+/* Small tablets and large phones */
+@media(max-width:760px){
+  .app-shell{display:block;min-height:100vh}
+  .sidebar{
+    position:sticky;
+    top:0;
+    height:auto;
+    padding:10px 14px 9px;
+    border:0;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 5px 18px rgba(18,59,93,.07);
+    background:color-mix(in srgb,var(--surface) 94%,transparent);
+    backdrop-filter:blur(14px);
+  }
+  .brand{margin:0 0 9px 2px;font-size:19px;gap:9px}
+  .brand img{width:34px;height:34px}
+  .nav-caption,.sidebar-bottom{display:none}
+  .navigation{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:0 0 2px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .navigation::-webkit-scrollbar{display:none}
+  .nav-link{
+    flex:0 0 auto;
+    min-height:39px;
+    padding:8px 12px;
+    font-size:11px;
+    border-radius:9px;
+  }
+  .nav-link span{font-size:14px;width:auto}
+  .nav-link.active{box-shadow:inset 0 -2px 0 var(--blue)}
+  .main-content{padding:23px 16px 20px}
+  .topbar{
+    align-items:flex-start;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .topbar>div:first-child{min-width:0;flex:1 1 220px}
+  .topbar-actions{width:auto;gap:8px}
+  .topbar-actions .button-primary{margin-left:0}
+  .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .summary-card:first-child{grid-column:auto}
+  .content-grid,.lower-grid{grid-template-columns:1fr;gap:12px}
+  .panel{padding:18px}
+  .month-toolbar{gap:10px;align-items:flex-end}
+  .transaction-tools{flex-wrap:wrap}
+  .transaction-tools input{flex:1 1 100%}
+  .transaction-tools select{flex:1 1 140px;width:auto}
+  .quick-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quick-links a{min-width:0}
+  .settings-row{align-items:flex-start;flex-direction:column}
+  .report-chart{height:170px}
+}
+
+/* Mobile phones */
+@media(max-width:520px){
+  .main-content{padding:20px 13px 18px}
+  .topbar{gap:12px;margin-bottom:20px}
+  .topbar h1{font-size:25px}
+  .page-subtitle{font-size:12px}
+  .topbar-actions{
+    flex:1 1 100%;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .topbar-actions .button-primary{margin-left:auto}
+  .currency-control select{min-height:39px}
+  .summary-grid{gap:9px}
+  .summary-card{padding:14px; border-radius:14px}
+  .summary-top{font-size:11px;gap:6px}
+  .summary-icon{width:29px;height:29px}
+  .summary-card>strong{font-size:clamp(19px,6vw,24px);margin:10px 0 2px}
+  .summary-card p{font-size:10px}
+  .panel{padding:15px;border-radius:14px}
+  .panel-heading{margin-bottom:15px}
+  .panel h2,.month-toolbar h2{font-size:17px}
+  .budget-numbers strong{font-size:17px}
+  .inline-form{flex-wrap:wrap}
+  .inline-form input{flex:1 1 100%}
+  .inline-form button{width:100%}
+  .transaction-row{
+    grid-template-columns:32px minmax(0,1fr) auto;
+    gap:8px;
+    padding:10px 0;
+  }
+  .transaction-actions{
+    grid-column:2/-1;
+    justify-self:end;
+    margin-top:-2px;
+  }
+  .transaction-actions button{width:34px;height:34px}
+  .transaction-description strong{font-size:11px}
+  .transaction-description span{font-size:10px}
+  .transaction-amount{font-size:11px}
+  .month-toolbar{align-items:center}
+  .month-controls{flex-shrink:0}
+  .month-controls .icon-button{width:36px;min-width:36px;height:36px;min-height:36px}
+  .chart-wrap{height:140px}
+  .report-chart{height:145px}
+  .form-row{grid-template-columns:1fr}
+  .modal-card{padding:18px;border-radius:15px}
+  .modal-actions{display:grid;grid-template-columns:1fr 1fr}
+  .modal-actions .button{width:100%}
+  .quick-links{grid-template-columns:1fr}
+  .quick-links a{width:100%}
+  .settings-panel select{width:100%;min-width:0}
+  .settings-row .button{width:100%}
+  .main-footer{padding:16px 8px}
+}
+
+/* Very narrow devices */
+@media(max-width:360px){
+  .sidebar{padding-inline:9px}
+  .brand{font-size:17px}
+  .nav-link{padding:8px 9px;font-size:10px}
+  .nav-link span{display:none}
+  .main-content{padding-inline:10px}
+  .summary-card{padding:11px}
+  .summary-card>strong{font-size:18px}
+  .panel{padding:12px}
+  .topbar h1{font-size:23px}
+  .button{padding:9px 11px;font-size:12px}
+  .transaction-row{grid-template-columns:29px minmax(0,1fr) auto;gap:6px}
+  .transaction-icon{width:29px;height:29px}
+}
+
+/* Prevent accidental horizontal scrolling in data-heavy sections */
+.content-grid>*,.summary-grid>*,.panel,.summary-card,
+.transaction-list,.transaction-row,.category-row{min-width:0}
+.transaction-tools>*{max-width:100%}
+@media(hover:none){
+  .summary-card:hover,.panel:hover{border-color:var(--border);box-shadow:var(--shadow)}
+}
+@media(prefers-reduced-motion:reduce){
+  .summary-card,.panel{transition:none!important}
+}
